@@ -13,6 +13,7 @@ A demo can be found at: http://github.e-sites.nl/require-matchmedia-plugin
 requirejs([' [script-alias] ! ([mediaquery]) ? [path] ']);
 ```
 
+##Config
 ```js
 require.config({
 	paths: {
