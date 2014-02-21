@@ -10,7 +10,7 @@ A demo can be found at: http://github.e-sites.nl/require-matchmedia-plugin
 
 ##Syntax
 ```js
-requirejs([' [script-alias] ! ([mediaquery]) ? [path] ']);
+requirejs([' [script-alias] ! ( [mediaquery] ) ? [path] ']);
 ```
 
 ##Getting started
@@ -31,6 +31,7 @@ requirejs(['mm!(screen and (max-width: 500px))?scripts/maxwidth']);
 requirejs(['mm!(screen and (min-width: 1200px))?scripts/minwidth']);
 requirejs(['mm!(all and (orientation:landscape))?scripts/orientation-landscape']);
 requirejs(['mm!(all and (orientation:portrait))?scripts/orientation-portrait']);
+requirejs(['mm!(only screen and (min-device-pixel-ratio:2), only screen and (min-resolution: 192dpi))?scripts/retina.js']);
 ```
 
 ##Browser support

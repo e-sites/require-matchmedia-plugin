@@ -6,37 +6,72 @@
 		<title>Require.js matchMedia plugin</title>
 		<meta name="description" content="RequireJS plugin for loading files conditionally, based on window.matchMedia.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<style>html{background:#e5e9e8; color:#444;} body {font-family: 'Helvetica Neue', Arial, sans-serif;} footer {color:#999;} a {color:#666;}</style>
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://frontend.e-sites.nl/library/min/g=prettifyCss">
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.min.js"></script>
+		<![endif]-->
 		<script>var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-18924418-8'],['_setDomainName', '.e-sites.nl'],['_trackPageview'],['_trackPageLoadTime']);(function(b,c){var a=b.createElement(c),d=b.getElementsByTagName(c)[0];a.async=a.src='//www.google-analytics.com/ga.js';d.parentNode.insertBefore(a,d)})(document,'script');</script>
 	</head>
 	<body>
-		<h1>Require.js matchMedia plugin</h1>
-		<p>
-			RequireJS plugin for loading files conditionally, based on <code><a href="dev.w3.org/csswg/cssom-view/#dom-window-matchmedia" target="_blank">window.matchMedia</a></code>. <br>
-			Open the console and fiddle around with the browser width to see what happens.
-		</p>
-		<h2>Syntax</h2>
-<pre>
-requirejs([' [script-alias] ! ([mediaquery]) ? [path] ']);
-</pre>
-		<h2>Config</h2>
-		<pre>
-require.config({
-	paths: {
-		'mm': 'matchmedia'
-	},
-	waitSeconds: 0 // this is needed to prevent timeout errors
-});
-		</pre>
-		<h2>Examples</h2>
-		<pre>
-requirejs(['mm!(screen and (max-width: 500px))?scripts/maxwidth']);
+		<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+			<div class="container">
+				<div class="navbar-header clearfix">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="http://e-sites.nl/en/" class="logo"><img src="http://frontend.e-sites.nl/img/esites-symbol.png" alt="" width="25"></a>
+					<a class="navbar-brand" href="/require-matchmedia-plugin">Require.js matchMedia plugin</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="/vestigo.js">Home</a></li>
+						<li><a href="#examples">Examples</a></li>
+						<li><a href="http://e-sites.nl/en/" target="_blank">About</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container" style="padding:60px 0 0;">
+			<h1>Require.js matchMedia plugin</h1>
+			<blockquote>
+				<p>
+					RequireJS plugin for loading files conditionally, based on <code><a href="dev.w3.org/csswg/cssom-view/#dom-window-matchmedia" target="_blank">window.matchMedia</a></code>. <br>
+				</p>
+			</blockquote>
+			<p>
+				Open the console and fiddle around with the browser width to see the example scripts only being loaded when the corresponding media query match.
+			</p>
+			<h2>Syntax</h2>
+<pre class="prettyprint">requirejs([' [script-alias] ! ( [mediaquery] ) ? [path] ']);</pre>
+			<h2>Config</h2>
+<pre class="prettyprint">require.config({
+    paths: {
+        'mm': 'matchmedia'
+    },
+    waitSeconds: 0 // this is needed to prevent timeout errors
+});</pre>
+			<h2>Examples</h2>
+<pre class="prettyprint">requirejs(['mm!(screen and (max-width: 500px))?scripts/maxwidth']);
 requirejs(['mm!(screen and (min-width: 1200px))?scripts/minwidth']);
 requirejs(['mm!(all and (orientation:landscape))?scripts/orientation-landscape']);
 requirejs(['mm!(all and (orientation:portrait))?scripts/orientation-portrait']);
-		</pre>
-		<hr>
-		<footer>A thing made by <a href="https://twitter.com/_boye">Boye</a> @ <a href="http://e-sites.nl/">e-sites HQ</a>.</footer>
+requirejs(['mm!(only screen and (min-device-pixel-ratio:2), only screen and (min-resolution: 192dpi))?scripts/retina.js']);</pre>
+
+			<h2>Browser support</h2>
+			<p>Basically all browser that have <a href="http://caniuse.com/matchmedia">`window.matchMedia` support</a>. If not available you can use <a href="https://github.com/paulirish/matchMedia.js/">this polyfill</a>.</p>
+
+			<h2>Feedback / comments</h2>
+			<p>Contact me on <a href="https://twitter.com/_boye">Twitter</a> or file an <a href="https://github.com/e-sites/require-matchmedia-plugin/issues">issue</a>.</p>
+
+			<h2>License</h2>
+			<p>Copyright (C) 2014 e-sites, <a href="http://www.e-sites.nl/">http://e-sites.nl/</a> Licensed under the MIT license.</p>
+		</div>
+		<script src="http://frontend.e-sites.nl/library/min/g=prettify"></script>
+		<script>window.prettyPrint && prettyPrint();</script>
 		<script src="assets/bower/requirejs/require.js" data-main="assets/js/main"></script>
 	</body>
 </html>
