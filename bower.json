@@ -1,0 +1,6 @@
+{
+  "name": "Require.js matchMedia plugin",
+  "devDependencies": {
+    "requirejs": "~2.1.11"
+  }
+}

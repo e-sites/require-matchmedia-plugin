@@ -1,0 +1,1 @@
+console.log('max-width: 500px')

@@ -1,0 +1,1 @@
+console.log('(min-width: 768px) and (max-width: 979px)');
