@@ -14,7 +14,7 @@ requirejs([' [script-alias] ! ( [mediaquery] ) ? [path] ']);
 ```
 
 ##Getting started
-Include Require.js in your project if you haven't done that already. After that, prep the config as follows:
+Include Require.js in your project if you haven't done that already. After that, make sure you include the following options in your config.
 
 ```js
 require.config({
@@ -35,7 +35,7 @@ requirejs(['mm!(only screen and (min-device-pixel-ratio:2), only screen and (min
 ```
 
 ##Browser support
-Basically all browser that have <a href="http://caniuse.com/matchmedia">`window.matchMedia` support</a>. If not available you can use <a href="https://github.com/paulirish/matchMedia.js/">this polyfill</a>.
+Basically all browsers that have <a href="http://caniuse.com/matchmedia">`window.matchMedia` support</a>. If not available you can use <a href="https://github.com/paulirish/matchMedia.js/">this polyfill</a>.
 
 ##Feedback / comments
 Contact me on <a href="https://twitter.com/_boye">Twitter</a> or file an <a href="https://github.com/e-sites/require-matchmedia-plugin/issues">issue</a>.
